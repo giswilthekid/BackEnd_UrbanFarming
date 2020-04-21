@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-var pool = require('./db/db_config')
+var pool = require('./db/config')
 
 /*
  * Create new random sensor inputs periodically.
