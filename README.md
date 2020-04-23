@@ -1,6 +1,6 @@
 # Urban Farming User Manual
 
-API is documented at Swagger [app.swaggerhub.com/apis-docs/isfanr/Tanam](https://app.swaggerhub.com/apis-docs/isfanr/Tanam/1.0.0).<br />
+API Documentaion is in [swagger:habiibaz/urban_farming](https://app.swaggerhub.com/apis-docs/habiibaz/UrbanFarmingAPI/1.0.0).<br />
 
 This project was bootstrapped with [Express Generator](https://expressjs.com/en/starter/generator.html).
 
@@ -19,7 +19,6 @@ This project was bootstrapped with [Express Generator](https://expressjs.com/en/
 [GET] '/tanaman/by-user/:userId' = Get tanaman by user id
 [POST] '/tanaman/:userId' = Create new tanaman by user id
 [DELETE] '/tanaman/:id' = Delete land by id
-*Make sure you have valid or real email for periodic report email purposes (in report-service)
 ```
 
 ## Available Scripts
