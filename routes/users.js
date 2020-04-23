@@ -1,6 +1,5 @@
 var express = require('express')
 var router = express.Router()
-var bcrypt = require('bcrypt')
 var User = require('../models/User')
 
 /*
@@ -46,15 +45,15 @@ router.get('/:id', async (req, res) => {
  */
 router.post('/', async (req, res) => {
   try {
-    if (!req.body.nama || !req.body.email || !req.body.password || !req.body.role) {
+    if (!req.body.nama_pengguna || !req.body.email || !req.body.password || !req.body.role || !req.body.no_telepon) {
       return res.status(400).send({ status: 400, message: 'Kurang lengkap bos !' })
     }
-    const hashedPassword = await bcrypt.hash(req.body.password, 10)
     const payload = [
-      req.body.nama,
+      req.body.nama_pengguna,
       req.body.email,
-      hashedPassword,
-      req.body.role
+      req.body.password,
+      req.body.role,
+      req.body.no_telepon
     ]
     const result = await User.create(payload)
     const results = {
@@ -77,10 +76,9 @@ router.put('/:id', async (req, res) => {
     if (!req.params.id) {
       return res.status(400).send({ status: 400, message: 'Gaada ID-nya ini :(' })
     }
-    const hashedPassword = await bcrypt.hash(req.body.password, 10)
     const payload = [
-      req.body.nama,
-      hashedPassword,
+      req.body.nama_pengguna,
+      req.body.password,
       req.params.id
     ]
     const result = await User.update(payload)

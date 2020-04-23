@@ -1,10 +1,5 @@
 var express = require('express')
 var router = express.Router()
-var sgMail = require('@sendgrid/mail')
-sgMail.setApiKey(process.env.SENDGRID_API_KEY)
-var Cryptr = require('cryptr')
-var cryptr = new Cryptr(process.env.SECRET_KEY)
-var bcrypt = require('bcrypt')
 var User = require('../models/User')
 
 /*
